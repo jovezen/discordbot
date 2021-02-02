@@ -26,9 +26,14 @@ async function test({ message, args }) {
 
 }
 
+function reactme({message}){
+    message.react('👌');
+}
+
 let commands = new Map();
 commands.set("random", random);
 commands.set("test", test);
+commands.set("reactme", reactme);
 
 client.on("message", message => {
     if (message.content[0] === '?') {
