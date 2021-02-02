@@ -30,10 +30,14 @@ function reactme({message}){
     message.react('👌');
 }
 
+function replyme({message}){
+    message.reply('Hey, I\'m a reply!')
+}
 let commands = new Map();
 commands.set("random", random);
 commands.set("test", test);
 commands.set("reactme", reactme);
+commands.set("replyme", replyme);
 
 client.on("message", message => {
     if (message.content[0] === '?') {
